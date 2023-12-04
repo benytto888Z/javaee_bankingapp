@@ -1,9 +1,7 @@
 package com.creamind.banking.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Addresse {
+public class Address {
     @Id
     @GeneratedValue
     private Integer id;
@@ -25,4 +23,9 @@ public class Addresse {
     private Integer zipCode;
     private String city;
     private String country;
+
+
+    @OneToOne
+    @JoinColumn(name = "accountowner_id")
+    private User accountowner;
 }

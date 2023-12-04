@@ -1,9 +1,7 @@
 package com.creamind.banking.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,4 +21,8 @@ public class Contact {
     private String firstname;
     private String lastname;
     private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "accountowner_id")
+    private User accountowner;
 }
