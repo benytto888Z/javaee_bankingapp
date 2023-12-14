@@ -3,24 +3,21 @@ package com.creamind.banking.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Contact {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Contact extends AbstractEntity{
 
     private String firstname;
     private String lastname;
     private String email;
+    private String iban;
 
     @ManyToOne
     @JoinColumn(name = "accountowner_id")

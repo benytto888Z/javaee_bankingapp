@@ -2,20 +2,17 @@ package com.creamind.banking.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Role {
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Role extends AbstractEntity{
 
     private String name;
 
